@@ -32,7 +32,7 @@ class Dp_DiarioViewSet(viewsets.ModelViewSet):
     serializer_class = Dp_DiarioSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['ultrafil']
+    search_fields = ['id']
 
 class examenLaboratorioViewSet(viewsets.ModelViewSet):
     """
