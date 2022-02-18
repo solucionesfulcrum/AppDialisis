@@ -10,6 +10,7 @@ class paciente(models.Model):
     fecha_nac = models.DateField()
     sexo = models.CharField(max_length=10)
     estado = models.CharField(max_length=5, default=1)
+    tipoTrata = models.CharField(max_length=5)
 
     def __str__(self):
         return self.nombres + self.ape_pat + self.ape_mat

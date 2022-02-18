@@ -4,7 +4,7 @@ from DP.models import dp_diario, usuario, paciente, examenLaboratorio
 # Register your models here.
 
 class pacienteAdmin(admin.ModelAdmin):
-    list_display = ('tipo_doc', 'num_doc', 'ape_pat', 'ape_mat', 'nombres', 'fecha_nac', 'sexo', 'estado')    
+    list_display = ('tipo_doc', 'num_doc', 'ape_pat', 'ape_mat', 'nombres', 'fecha_nac', 'sexo', 'estado','tipoTrata')    
 
 class usuarioAdmin(admin.ModelAdmin):
     list_display = ('paciente', 'nombre_user', 'pass_user', 'estado')
