@@ -8,6 +8,7 @@ class PacienteSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class UsuarioSerializer(serializers.HyperlinkedModelSerializer):
+    datosPaciente = PacienteSerializer(source = "paciente", read_only=True)
     class Meta:
         model = usuario
         fields = '__all__'
