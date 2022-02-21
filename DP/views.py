@@ -42,4 +42,4 @@ class examenLaboratorioViewSet(viewsets.ModelViewSet):
     serializer_class = examenLaboratorioSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['centro']
+    search_fields = ['=dni_paciente']
