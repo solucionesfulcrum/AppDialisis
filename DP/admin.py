@@ -7,7 +7,7 @@ class pacienteAdmin(admin.ModelAdmin):
     list_display = ('tipo_doc', 'num_doc', 'ape_pat', 'ape_mat', 'nombres', 'fecha_nac', 'sexo', 'estado','tipoTrata')    
 
 class usuarioAdmin(admin.ModelAdmin):
-    list_display = ('paciente', 'nombre_user', 'pass_user', 'estado')
+    list_display = ('paciente', 'nombre_user', 'pass_user', 'estado', 'primSesion')
 
 class dp_diarioAdmin(admin.ModelAdmin):
     list_display = ('paciente', 'ultrafil', 'pres_art', 'peso', 'user_reg', 'fecha_reg', 'user_mod', 'fecha_mod', 'user_eli', 'fecha_eli')

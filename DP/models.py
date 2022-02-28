@@ -11,6 +11,7 @@ class paciente(models.Model):
     sexo = models.CharField(max_length=10)
     estado = models.CharField(max_length=5, default=1)
     tipoTrata = models.CharField(max_length=5)
+    
 
     def __str__(self):
         return self.nombres + self.ape_pat + self.ape_mat
@@ -20,6 +21,7 @@ class usuario(models.Model):
     nombre_user = models.CharField(max_length=40)
     pass_user = models.CharField(max_length=256)
     estado = models.CharField(max_length=5, default=1)
+    primSesion = models.CharField(max_length=5)
 
     def __str__(self):
         return self.nombre_user

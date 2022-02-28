@@ -28,7 +28,7 @@ class Dp_DiarioViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
-    queryset = dp_diario.objects.all()
+    queryset = dp_diario.objects.order_by('-id')
     serializer_class = Dp_DiarioSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
