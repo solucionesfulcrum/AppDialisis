@@ -30,6 +30,7 @@ class dp_diario(models.Model):
     paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
     ultrafil = models.IntegerField()
     pres_art = models.IntegerField()
+    pres_art_diast = models.IntegerField()
     peso = models.DecimalField(max_digits=5, decimal_places=2)
     user_reg = models.CharField(max_length=40, default='USER')
     fecha_reg = models.DateField(auto_now_add=True)
