@@ -25,6 +25,10 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.conf.urls import url
 
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 schema_view = get_schema_view(   
     openapi.Info(      
         title="Dialisis Peritoneal",     
@@ -43,6 +47,7 @@ router.register(r'pacientes', views.PacienteViewSet)
 router.register(r'usuarios', views.UsuarioViewSet)
 router.register(r'dialisisPeritoneal', views.Dp_DiarioViewSet)
 router.register(r'examenLabo', views.examenLaboratorioViewSet)
+router.register(r'archivo', views.ArchivoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -54,4 +59,4 @@ urlpatterns = [
 
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

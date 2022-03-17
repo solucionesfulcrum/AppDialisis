@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
-from DP.models import dp_diario, paciente, usuario, examenLaboratorio
+from DP.models import archivo, dp_diario, paciente, usuario, examenLaboratorio
 from rest_framework import viewsets, permissions, filters
-from DP.serializers import Dp_DiarioSerializer, PacienteSerializer, UsuarioSerializer, examenLaboratorioSerializer
+from DP.serializers import Dp_DiarioSerializer, PacienteSerializer, UsuarioSerializer, examenLaboratorioSerializer, ArchivoSerializer
 
 # Create your views here.
 class PacienteViewSet(viewsets.ModelViewSet):
@@ -43,3 +43,13 @@ class examenLaboratorioViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['=dni_paciente']
+
+class ArchivoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = archivo.objects.all()
+    serializer_class = ArchivoSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=descripcion']

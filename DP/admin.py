@@ -1,5 +1,5 @@
 from django.contrib import admin
-from DP.models import dp_diario, usuario, paciente, examenLaboratorio
+from DP.models import dp_diario, usuario, paciente, examenLaboratorio, archivo
 
 # Register your models here.
 
@@ -15,7 +15,11 @@ class dp_diarioAdmin(admin.ModelAdmin):
 class examenLaboratorioAdm(admin.ModelAdmin):
     list_display = ('centro','periodo','area','servicio','actividad','subactividad','acto_medico','fecha_atencion','fecha_solicitud','fecha_cita','fecha_resultado','num_solicitud','dni_solicita','prof_solicita','tipexamen','arealab','sede','examen','descexamen','dni_profesional','profesional','dni_paciente','h_c','paciente','telefonos','annos','meses','dias','sexo','tipo_paciente','cas_adscripcion','diagnostico','des_diagn','tip_diagn','resultado','categoria_resul','fecha_registro','usuario_registro','informe_resultado','orden_plantilla','desc_plantilla','valor_resultado','unidadvalor','observresultado','usario_modifica','fecha_modifica','centro_origen_solicitud','codresul_covid','resultado_covid','hora_registro','autogenerado','desc_topico')
 
+class archivoAdmin(admin.ModelAdmin):
+    list_display = ('descripcion', 'documento')
+
 admin.site.register(paciente, pacienteAdmin)
 admin.site.register(usuario, usuarioAdmin)
 admin.site.register(dp_diario, dp_diarioAdmin)
 admin.site.register(examenLaboratorio, examenLaboratorioAdm)
+admin.site.register(archivo, archivoAdmin)

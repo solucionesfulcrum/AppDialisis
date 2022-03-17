@@ -93,3 +93,7 @@ class examenLaboratorio(models.Model):
     hora_registro = models.CharField(max_length=20, null=True, blank=True)
     autogenerado = models.CharField(max_length=20, null=True, blank=True)
     desc_topico = models.CharField(max_length=40, null=True, blank=True)
+
+class archivo(models.Model):
+     descripcion = models.CharField(max_length=30, null=True, blank=True)
+     documento = models.FileField(upload_to='archivos/')

@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from DP.models import dp_diario, paciente, usuario, examenLaboratorio
+from DP.models import dp_diario, paciente, usuario, examenLaboratorio, archivo
 from rest_framework import serializers
 
 class PacienteSerializer(serializers.HyperlinkedModelSerializer):
@@ -21,4 +21,9 @@ class Dp_DiarioSerializer(serializers.HyperlinkedModelSerializer):
 class examenLaboratorioSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = examenLaboratorio
+        fields = '__all__'
+
+class ArchivoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = archivo
         fields = '__all__'
